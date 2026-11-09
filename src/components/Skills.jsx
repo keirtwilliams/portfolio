@@ -69,11 +69,11 @@ const Skills = () => {
               </h2>
             </div>
 
-            <div className="p-6 grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div className="p-4 sm:p-6 grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3">
               {group.skills.map((skill) => (
                 <div
                   key={skill}
-                  className="interactive-card p-3 text-sm font-medium transition-colors cursor-default"
+                  className="interactive-card p-2.5 sm:p-3 text-xs sm:text-sm font-medium transition-colors cursor-default"
                 >
                   {skill}
                 </div>

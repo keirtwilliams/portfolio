@@ -26,7 +26,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
       role="dialog"
       aria-modal="true"
       aria-labelledby="resume-modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 lg:p-10 bg-black/60 backdrop-blur-sm transition-opacity"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 lg:p-10 bg-black/60 backdrop-blur-sm transition-opacity"
       onClick={onClose}
     >
       <div
@@ -35,7 +35,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
           borderColor: 'var(--border-rule)',
           color: 'var(--text-primary)',
         }}
-        className="w-full max-w-5xl h-[90vh] border flex flex-col shadow-none overflow-hidden"
+        className="w-full max-w-4xl h-[95vh] sm:h-[92vh] border flex flex-col shadow-none overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header Bar */}
@@ -44,7 +44,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
             backgroundColor: 'var(--bg-surface)',
             borderColor: 'var(--border-rule)',
           }}
-          className="px-4 py-3 border-b flex items-center justify-between gap-3 flex-shrink-0"
+          className="px-3 sm:px-4 py-2.5 sm:py-3 border-b flex items-center justify-between gap-2 sm:gap-3 flex-shrink-0"
         >
           <div className="flex items-center space-x-2 truncate">
             <svg
@@ -67,7 +67,17 @@ const ResumeModal = ({ isOpen, onClose }) => {
               style={{ color: 'var(--text-primary)' }}
               className="text-xs font-mono uppercase tracking-wider font-semibold truncate"
             >
-              Keirt William Gemperle — Resume (PDF)
+              Keirt William Gemperle — Resume
+            </span>
+            <span
+              style={{
+                backgroundColor: 'var(--bg-canvas)',
+                borderColor: 'var(--border-rule)',
+                color: 'var(--text-secondary)',
+              }}
+              className="hidden sm:inline-block border px-1.5 py-0.5 text-[9px] font-mono font-bold uppercase tracking-wider"
+            >
+              PDF · 1 Page
             </span>
           </div>
 
@@ -77,7 +87,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
               href="/resume.pdf"
               target="_blank"
               rel="noreferrer"
-              className="hidden sm:inline-flex items-center space-x-1.5 btn-secondary px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider cursor-pointer"
+              className="inline-flex items-center space-x-1 sm:space-x-1.5 btn-secondary px-2 sm:px-2.5 py-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-wider cursor-pointer"
               title="Open PDF in new tab"
             >
               <span>New Tab</span>
@@ -88,7 +98,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
             <a
               href="/resume.pdf"
               download="Keirt_William_Gemperle_Resume.pdf"
-              className="hidden sm:inline-flex items-center space-x-1.5 btn-secondary px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider cursor-pointer"
+              className="inline-flex items-center space-x-1 sm:space-x-1.5 btn-secondary px-2 sm:px-2.5 py-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-wider cursor-pointer"
               title="Download PDF"
             >
               <span>Download</span>
@@ -103,7 +113,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
             <button
               type="button"
               onClick={onClose}
-              className="btn-primary px-3 py-1 text-xs font-mono uppercase tracking-wider font-semibold cursor-pointer"
+              className="btn-primary px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-mono uppercase tracking-wider font-semibold cursor-pointer"
               aria-label="Close resume preview modal"
             >
               Close [Esc] &times;
@@ -116,47 +126,11 @@ const ResumeModal = ({ isOpen, onClose }) => {
           style={{ backgroundColor: 'var(--bg-canvas)' }}
           className="flex-1 w-full h-full overflow-hidden relative"
         >
-          <object
-            data="/resume.pdf#view=FitH"
-            type="application/pdf"
+          <iframe
+            src="/resume.pdf#toolbar=0&navpanes=0&scrollbar=0&pagemode=none&view=FitH"
+            title="Keirt William Gemperle — Resume"
             className="w-full h-full block border-0"
-            aria-label="Resume PDF Document"
-          >
-            <div className="flex flex-col items-center justify-center h-full p-8 text-center space-y-4">
-              <p
-                style={{ color: 'var(--text-primary)' }}
-                className="text-base font-medium"
-              >
-                Unable to display the PDF preview directly in this browser.
-              </p>
-              <div className="flex items-center space-x-3">
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    backgroundColor: 'var(--text-primary)',
-                    color: 'var(--bg-canvas)',
-                  }}
-                  className="px-4 py-2 text-xs font-mono uppercase tracking-wider font-semibold"
-                >
-                  Open in New Tab &rarr;
-                </a>
-                <a
-                  href="/resume.pdf"
-                  download="Keirt_William_Gemperle_Resume.pdf"
-                  style={{
-                    backgroundColor: 'var(--bg-surface)',
-                    borderColor: 'var(--border-rule)',
-                    color: 'var(--text-primary)',
-                  }}
-                  className="border px-4 py-2 text-xs font-mono uppercase tracking-wider font-semibold"
-                >
-                  Download File
-                </a>
-              </div>
-            </div>
-          </object>
+          />
         </div>
       </div>
     </div>

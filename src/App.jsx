@@ -97,14 +97,16 @@ function App() {
         currentPage={currentPage}
         onNavigate={handleNavigate}
         onOpenResume={() => setIsResumeOpen(true)}
+        theme={theme}
+        onToggleTheme={toggleTheme}
       />
 
-      {/* Standalone Quick Theme Toggle (Top-Right, outside navigation bar) */}
-      <div className="fixed top-3.5 right-4 sm:top-6 sm:right-8 z-40 flex items-center">
+      {/* Standalone Quick Theme Toggle (Top-Right, desktop only outside navigation bar) */}
+      <div className="hidden md:flex fixed top-6 right-8 z-40 items-center">
         <button
           type="button"
           onClick={toggleTheme}
-          className="btn-secondary px-3 py-1.5 sm:px-3.5 sm:py-2 text-[11px] sm:text-xs font-mono uppercase tracking-wider flex items-center space-x-2 cursor-pointer shadow-none"
+          className="btn-secondary px-3.5 py-2 text-xs font-mono uppercase tracking-wider flex items-center space-x-2 cursor-pointer shadow-none"
           aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
           title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
         >

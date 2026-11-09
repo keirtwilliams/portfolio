@@ -69,9 +69,9 @@ const Contact = () => {
             {/* Email Card with Monochromatic Gmail Icon + 1-Click Copy */}
             <div
               style={{ borderColor: 'var(--border-rule)' }}
-              className="p-6 space-y-3"
+              className="p-4 sm:p-6 space-y-3"
             >
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center space-x-2">
                   <svg
                     style={{ color: 'var(--text-primary)' }}
@@ -98,7 +98,7 @@ const Contact = () => {
                 <button
                   type="button"
                   onClick={handleCopyEmail}
-                  className="btn-secondary px-3 py-1 text-xs font-mono uppercase tracking-wider cursor-pointer shadow-none"
+                  className="btn-secondary px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-mono uppercase tracking-wider cursor-pointer shadow-none flex-shrink-0"
                   aria-live="polite"
                 >
                   {copied ? 'Copied' : 'Copy Email'}
@@ -108,7 +108,7 @@ const Contact = () => {
               <a
                 href="mailto:keirtwilliamgemperle@gmail.com"
                 style={{ color: 'var(--text-primary)' }}
-                className="block text-lg sm:text-xl font-semibold hover:underline underline-offset-4 transition-all break-all"
+                className="block text-base sm:text-xl font-semibold hover:underline underline-offset-4 transition-all break-all"
               >
                 keirtwilliamgemperle@gmail.com
               </a>
@@ -117,7 +117,7 @@ const Contact = () => {
             {/* Phone / Mobile Card */}
             <div
               style={{ borderColor: 'var(--border-rule)' }}
-              className="p-6 space-y-2"
+              className="p-4 sm:p-6 space-y-2"
             >
               <span
                 style={{ color: 'var(--text-secondary)' }}
@@ -128,7 +128,7 @@ const Contact = () => {
               <a
                 href="tel:09673186364"
                 style={{ color: 'var(--text-primary)' }}
-                className="inline-block text-lg font-semibold hover:underline underline-offset-4 transition-all font-mono"
+                className="inline-block text-base sm:text-lg font-semibold hover:underline underline-offset-4 transition-all font-mono"
               >
                 09673186364
               </a>
@@ -137,7 +137,7 @@ const Contact = () => {
             {/* GitHub Card */}
             <div
               style={{ borderColor: 'var(--border-rule)' }}
-              className="p-6 space-y-2"
+              className="p-4 sm:p-6 space-y-2"
             >
               <span
                 style={{ color: 'var(--text-secondary)' }}
@@ -150,16 +150,38 @@ const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
                 style={{ color: 'var(--text-primary)' }}
-                className="inline-block text-lg font-semibold hover:underline underline-offset-4 transition-all"
+                className="inline-block text-base sm:text-lg font-semibold hover:underline underline-offset-4 transition-all break-all"
               >
                 github.com/keirtwilliams &rarr;
+              </a>
+            </div>
+
+            {/* LinkedIn Card */}
+            <div
+              style={{ borderColor: 'var(--border-rule)' }}
+              className="p-4 sm:p-6 space-y-2"
+            >
+              <span
+                style={{ color: 'var(--text-secondary)' }}
+                className="text-xs font-mono uppercase tracking-wider block"
+              >
+                LinkedIn Profile
+              </span>
+              <a
+                href="https://linkedin.com/in/keirtwilliamgemperle"
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: 'var(--text-primary)' }}
+                className="inline-block text-base sm:text-lg font-semibold hover:underline underline-offset-4 transition-all break-all"
+              >
+                linkedin.com/in/keirtwilliamgemperle &rarr;
               </a>
             </div>
 
             {/* Physical Base */}
             <div
               style={{ borderColor: 'var(--border-rule)' }}
-              className="p-6 space-y-2"
+              className="p-4 sm:p-6 space-y-2"
             >
               <span
                 style={{ color: 'var(--text-secondary)' }}

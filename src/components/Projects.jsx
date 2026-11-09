@@ -75,7 +75,7 @@ const Projects = () => {
                 backgroundColor: 'var(--bg-canvas)',
                 borderColor: 'var(--border-rule)',
               }}
-              className="border p-6 sm:p-8 space-y-8"
+              className="border p-4 sm:p-8 space-y-6 sm:space-y-8"
               aria-labelledby={`project-${project.id}-title`}
             >
               {/* Visual Interface Mockup (Clickable) */}
@@ -121,14 +121,7 @@ const Projects = () => {
                     style={{ color: 'var(--text-primary)' }}
                     className="text-2xl sm:text-3xl font-bold tracking-tight"
                   >
-                    <a
-                      href={projectUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="hover:underline underline-offset-4"
-                    >
-                      {project.title} &rarr;
-                    </a>
+                    {project.title}
                   </h2>
 
                   <p
