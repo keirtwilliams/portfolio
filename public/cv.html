@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keirt William Gemperle — Curriculum Vitae</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #525659;
+      color: #000000;
+      font-family: 'Times New Roman', Times, Cambria, Georgia, serif;
+      font-size: 10pt;
+      line-height: 1.3;
+      padding: 24px 12px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Screen Action Header */
+    .screen-action-bar {
+      max-width: 8.5in;
+      margin: 0 auto 16px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 12px;
+      color: #FFFFFF;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      background: #FFFFFF;
+      color: #121212;
+      border: 1px solid #FFFFFF;
+      font-weight: 600;
+      font-size: 11px;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #FFFFFF;
+      border-color: #9CA3AF;
+    }
+
+    .btn:hover {
+      opacity: 0.88;
+    }
+
+    /* CV Document Sheet (Matches PDF 8.5" x 11" Paper Dimensions) */
+    .pdf-sheet {
+      width: 100%;
+      max-width: 8.5in;
+      min-height: 11in;
+      margin: 0 auto;
+      background: #FFFFFF;
+      padding: 0.6in 0.7in;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Header Section (Centered Title & Contacts Matching PDF) */
+    header {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 22pt;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      margin-bottom: 3px;
+      line-height: 1.1;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .contact-line {
+      font-size: 9.5pt;
+      color: #000000;
+      line-height: 1.35;
+    }
+
+    .contact-line a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    .contact-line a:hover {
+      text-decoration: underline;
+    }
+
+    /* Section Headings (All Caps with Solid Bottom Border Rule) */
+    section {
+      margin-top: 11px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 11.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      border-bottom: 0.75pt solid #000000;
+      padding-bottom: 1.5px;
+      margin-bottom: 5px;
+    }
+
+    /* Entry Two-Column Alignment (Matches PDF Formation) */
+    .entry {
+      margin-bottom: 7px;
+      page-break-inside: avoid;
+    }
+
+    .entry-row-1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 10.5pt;
+    }
+
+    .entry-title {
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #000000;
+    }
+
+    .entry-location {
+      font-size: 10pt;
+      font-weight: 400;
+      text-align: right;
+      color: #000000;
+    }
+
+    .entry-row-2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 10pt;
+      margin-bottom: 2px;
+    }
+
+    .entry-subtitle {
+      font-size: 10pt;
+      font-weight: 400;
+      color: #000000;
+    }
+
+    .entry-subtitle.all-caps {
+      text-transform: uppercase;
+    }
+
+    .entry-subtitle.italic {
+      font-style: italic;
+    }
+
+    .entry-date {
+      font-size: 10pt;
+      font-style: italic;
+      text-align: right;
+      color: #000000;
+    }
+
+    /* Bullet Points */
+    ul.bullets {
+      list-style-type: disc;
+      margin-left: 18px;
+      padding-left: 0;
+      margin-top: 2px;
+    }
+
+    ul.bullets li {
+      font-size: 10pt;
+      line-height: 1.34;
+      margin-bottom: 2px;
+      text-align: justify;
+      color: #000000;
+    }
+
+    /* Summary / Coursework Prose */
+    .summary-text {
+      font-size: 10pt;
+      line-height: 1.35;
+      text-align: justify;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+
+    /* Skills Summary Category Rows */
+    .skill-line {
+      font-size: 10pt;
+      line-height: 1.35;
+      margin-bottom: 2px;
+    }
+
+    .skill-line strong {
+      font-weight: 700;
+    }
+
+    /* Print Setup */
+    @media print {
+      body {
+        background: #FFFFFF !important;
+        padding: 0 !important;
+      }
+
+      .screen-action-bar {
+        display: none !important;
+      }
+
+      .pdf-sheet {
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      @page {
+        margin: 0.5in 0.6in;
+        size: letter portrait;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .pdf-sheet {
+        padding: 24px 16px;
+      }
+
+      .entry-row-1, .entry-row-2 {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .entry-location, .entry-date {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Action Bar -->
+  <div class="screen-action-bar">
+    <span>Curriculum Vitae (CV) · Keirt William Gemperle</span>
+    <div style="display: flex; gap: 8px;">
+      <a href="/" class="btn btn-secondary">&larr; Portfolio</a>
+      <button onclick="window.print()" class="btn">Print / Save as PDF (Ctrl + P) &darr;</button>
+    </div>
+  </div>
+
+  <!-- Document Sheet -->
+  <main class="pdf-sheet">
+    <header>
+      <h1>Keirt William Gemperle</h1>
+      <div class="contact-line">
+        San Pedro Jaro, Iloilo City, PH 5000 | <a href="mailto:keirtwilliamgemperle@gmail.com">keirtwilliamgemperle@gmail.com</a> | 09673186364
+      </div>
+      <div class="contact-line">
+        <a href="https://github.com/keirtwilliams" target="_blank">github.com/keirtwilliams</a> | <a href="https://linkedin.com/in/keirtwilliamgemperle" target="_blank">linkedin.com/in/keirtwilliamgemperle</a>
+      </div>
+    </header>
+
+    <!-- PROFESSIONAL PROFILE -->
+    <section>
+      <h2>PROFESSIONAL PROFILE</h2>
+      <p class="summary-text">
+        Information Technology student at the Western Institute of Technology specializing in front-end web engineering, component-driven UI architectures, and modern cloud BaaS workflows. Proven experience in independently designing and implementing end-to-end multi-portal applications with React, Tailwind CSS, Supabase Realtime, and Mapbox GL JS, alongside collaborative departmental platform development. Focused on clean architecture, structured version control, and building accessible, performance-oriented user interfaces.
+      </p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+      <h2>EDUCATION</h2>
+
+      <div class="entry">
+        <div class="entry-row-1">
+          <span class="entry-title">WESTERN INSTITUTE OF TECHNOLOGY</span>
+          <span class="entry-location">La Paz, Iloilo City, PH</span>
+        </div>
+        <div class="entry-row-2">
+          <span class="entry-subtitle all-caps">BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</span>
+          <span class="entry-date">Expected Graduation: May 2027</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-row-1">
+          <span class="entry-title">ILOILO NATIONAL HIGH SCHOOL-SHS</span>
+          <span class="entry-location">La Paz, Iloilo City, PH</span>
+        </div>
+        <div class="entry-row-2">
+          <span class="entry-subtitle all-caps">GENERAL ACADEMIC STRAND(GAS)</span>
+          <span class="entry-date">Graduated: July 2023</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL PROJECTS & ARCHITECTURES -->
+    <section>
+      <h2>TECHNICAL PROJECTS & ARCHITECTURES</h2>
+
+      <div class="entry">
+        <div class="entry-row-1">
+          <span class="entry-title">PAWADOPT – STRAY DOG RESCUE & ADOPTION PLATFORM</span>
+          <span class="entry-location">pawadopt-main.vercel.app</span>
+        </div>
+        <div class="entry-row-2">
+          <span class="entry-subtitle italic">Sole Developer & Systems Architect</span>
+          <span class="entry-date">January 2026 - Present</span>
+        </div>
+        <ul class="bullets">
+          <li>Independently architected, designed, and developed an end-to-end multi-portal web platform (Citizen, Shelter Admin, and Local Government Unit) digitizing municipal stray reporting, rescue dispatch, and adoption workflows across Iloilo City.</li>
+          <li>Leveraged modern AI developer tooling (Cursor) to rapidly scaffold frontend components and prototype UI views, maintaining full ownership over system architecture, database design, and user experience.</li>
+          <li>Integrated an interactive mapping interface with Mapbox GL JS, allowing citizens to drop precise GPS location pins for rescue sightings, validated against municipal boundaries.</li>
+          <li>Implemented real-time operational rescue boards utilizing Supabase Realtime WebSocket channels, automatically reflecting report status changes without requiring page reloads.</li>
+          <li>Designed an administrative ticket consolidation interface to merge duplicate reports from multiple citizens into single actionable rescue cases.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-row-1">
+          <span class="entry-title">BSIT STUDENT ATTENDANCE SYSTEM</span>
+          <span class="entry-location">PERN Stack · WIT</span>
+        </div>
+        <div class="entry-row-2">
+          <span class="entry-subtitle italic">Front-End Developer</span>
+          <span class="entry-date">2026</span>
+        </div>
+        <ul class="bullets">
+          <li>Engineered responsive React client interfaces for a PERN stack attendance verification and logging web application.</li>
+          <li>Built high-speed student ID input verification and real-time confirmation UI, actively utilized by 300–500 BSIT students during assemblies and academic events.</li>
+          <li>Implemented export functionality enabling users to download complete morning and afternoon attendance session records.</li>
+          <li>Implemented client-side validation logic and real-time state handling to eliminate manual paper rosters.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-row-1">
+          <span class="entry-title">OFFICIAL WEBSITE OF BSIT WIT – DEPARTMENT & ORGANIZATION PLATFORM</span>
+          <span class="entry-location">witpsits-webapp.vercel.app</span>
+        </div>
+        <div class="entry-row-2">
+          <span class="entry-subtitle italic">Front-End Developer</span>
+          <span class="entry-date">March 2026 – August 2026</span>
+        </div>
+        <ul class="bullets">
+          <li>Co-developed and maintained the official web platform for the Western Institute of Technology BSIT program, serving as the central digital hub for departmental resources, announcements, and events.</li>
+          <li>Scaffolded application structure and backend integration using Express.js.</li>
+          <li>Employed AI-assisted workflows to translate design requirements into responsive React and Tailwind CSS components, ensuring clean mobile and desktop layouts.</li>
+          <li>Structured institutional curriculum modules and faculty academic directory query matrices.</li>
+          <li>Collaborated using Git and GitHub within a student developer team, actively participating in bug fixes, component refactoring, and UI performance maintenance.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP & ACTIVITIES -->
+    <section>
+      <h2>LEADERSHIP & ACTIVITIES</h2>
+
+      <div class="entry">
+        <div class="entry-row-1">
+          <span class="entry-title">PSITS – WESTERN INSTITUTE OF TECHNOLOGY CHAPTER</span>
+          <span class="entry-location">La Paz, Iloilo City, PH</span>
+        </div>
+        <div class="entry-row-2">
+          <span class="entry-subtitle italic">Core Developer</span>
+          <span class="entry-date">March 2026 – August 2026</span>
+        </div>
+        <ul class="bullets">
+          <li>Scaffolded front-end component architecture and layout templates for departmental student platforms.</li>
+          <li>Maintained student-facing web platforms, resolving UI rendering bottlenecks and improving responsive mobile layouts.</li>
+          <li>Championed structured Git version control standards, branch conventions, and pull request workflows across student-led project teams.</li>
+          <li>Co-organized collaborative technical sessions and onboarding on front-end workflows, React component design, and reproducible local setups.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS & COMPETENCIES -->
+    <section>
+      <h2>TECHNICAL SKILLS & COMPETENCIES</h2>
+
+      <div class="skill-line">
+        <strong>Languages:</strong> JavaScript (ES6+), HTML5, CSS3, PHP, SQL
+      </div>
+      <div class="skill-line">
+        <strong>Frameworks & Libraries:</strong> React 18, Express.js, Tailwind CSS, Vite, PostCSS, Mapbox GL JS
+      </div>
+      <div class="skill-line">
+        <strong>Cloud & Backend BaaS:</strong> Node.js, Express.js, PostgreSQL, Supabase (Realtime, Auth, Database), MySQL, Vercel
+      </div>
+      <div class="skill-line">
+        <strong>Developer Tooling:</strong> Git, GitHub, VS Code, Cursor, Postman, Chrome DevTools, npm/pnpm
+      </div>
+      <div class="skill-line">
+        <strong>Methodologies:</strong> Component-Driven Architecture, Single-Page Applications (SPA), Mobile-First Responsive Design, Agile Collaboration
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

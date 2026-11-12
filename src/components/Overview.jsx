@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Overview = ({ onNavigate, onOpenResume }) => {
+const Overview = ({ onNavigate, onOpenResume, onOpenCv }) => {
   return (
     <article className="space-y-12 sm:space-y-16" aria-labelledby="overview-title">
       {/* Header Eyebrow, Title & Action Buttons Directly Below */}
@@ -8,13 +8,7 @@ const Overview = ({ onNavigate, onOpenResume }) => {
         style={{ borderColor: 'var(--border-rule)' }}
         className="space-y-6 sm:space-y-8 border-b pb-8 sm:pb-12"
       >
-        <div
-          style={{ color: 'var(--text-secondary)' }}
-          className="flex items-center justify-between text-xs font-mono uppercase tracking-widest"
-        >
-          <span>PROFILE</span>
-          <span>INTRODUCTION</span>
-        </div>
+       
 
         <h1
           id="overview-title"
@@ -29,7 +23,7 @@ const Overview = ({ onNavigate, onOpenResume }) => {
           <button
             type="button"
             onClick={() => onNavigate('projects')}
-            className="btn-primary px-4 sm:px-5 py-2.5 sm:py-3 text-[11px] sm:text-xs font-mono uppercase tracking-wider cursor-pointer font-semibold shadow-none"
+            className="btn-secondary px-4 sm:px-5 py-2.5 sm:py-3 text-[11px] sm:text-xs font-mono uppercase tracking-wider cursor-pointer font-semibold shadow-none"
           >
             View Projects &rarr;
           </button>
@@ -54,7 +48,7 @@ const Overview = ({ onNavigate, onOpenResume }) => {
             type="button"
             onClick={onOpenResume}
             className="btn-secondary inline-flex items-center space-x-1.5 sm:space-x-2 px-4 sm:px-5 py-2.5 sm:py-3 text-[11px] sm:text-xs font-mono uppercase tracking-wider cursor-pointer shadow-none"
-            title="Open Resume Preview Modal"
+            title="Open Resume (PDF · 1 Page)"
             aria-label="Open resume preview modal"
           >
             <svg className="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="square" aria-hidden="true">
@@ -73,6 +67,31 @@ const Overview = ({ onNavigate, onOpenResume }) => {
               className="border px-1 py-0.5 text-[9px] font-mono font-bold leading-none"
             >
               PDF
+            </span>
+            <span>&rarr;</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={onOpenCv}
+            className="btn-secondary inline-flex items-center space-x-1.5 sm:space-x-2 px-4 sm:px-5 py-2.5 sm:py-3 text-[11px] sm:text-xs font-mono uppercase tracking-wider cursor-pointer shadow-none"
+            title="Open Curriculum Vitae (CV) Preview Modal"
+            aria-label="Open curriculum vitae preview modal"
+          >
+            <svg className="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="square" aria-hidden="true">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+            </svg>
+            <span>View CV</span>
+            <span
+              style={{
+                backgroundColor: 'var(--bg-canvas)',
+                borderColor: 'var(--border-rule)',
+                color: 'var(--text-primary)',
+              }}
+              className="border px-1 py-0.5 text-[9px] font-mono font-bold leading-none"
+            >
+              CV · PDF
             </span>
             <span>&rarr;</span>
           </button>

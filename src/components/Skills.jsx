@@ -7,7 +7,7 @@ const skillGroups = [
   },
   {
     title: 'Backend',
-    skills: ['Supabase', 'PHP', 'MySQL'],
+    skills: ['Node.js', 'Express.js', 'PostgreSQL', 'Supabase', 'PHP', 'MySQL'],
   },
   {
     title: 'Tools',
@@ -26,12 +26,7 @@ const Skills = () => {
         style={{ borderColor: 'var(--border-rule)' }}
         className="space-y-4 border-b pb-8"
       >
-        <span
-          style={{ color: 'var(--text-secondary)' }}
-          className="text-xs font-mono uppercase tracking-widest block"
-        >
-          COMPETENCIES
-        </span>
+       
 
         <h1
           id="skills-title"

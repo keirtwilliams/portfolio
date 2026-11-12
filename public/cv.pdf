@@ -1,0 +1,128 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R >> >> /Contents 7 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Roman >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Bold >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Italic >>
+endobj
+7 0 obj
+<< /Length 8956 >>
+stream
+BT /F2 22 Tf 193.09 756 Td (Keirt William Gemperle) Tj ET
+BT /F1 9.5 Tf 138.1 741 Td (San Pedro Jaro, Iloilo City, PH 5000 | keirtwilliamgemperle@gmail.com | 09673186364) Tj ET
+BT /F1 9.5 Tf 182.6 729 Td (github.com/keirtwilliams | linkedin.com/in/keirtwilliamgemperle) Tj ET
+BT /F2 11.5 Tf 36 712 Td (EDUCATION) Tj ET
+0.75 w 0 0 0 RG 36 709 m 576 709 l S
+BT /F2 10.5 Tf 36 698.5 Td (WESTERN INSTITUTE OF TECHNOLOGY) Tj ET
+BT /F1 10 Tf 484.33 698.5 Td (La Paz, Iloilo City, PH) Tj ET
+BT /F1 10 Tf 36 686 Td (BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY) Tj ET
+BT /F3 10 Tf 499.49 686 Td (Expected May 2027) Tj ET
+BT /F2 10.5 Tf 36 672 Td (ILOILO NATIONAL HIGH SCHOOL-SHS) Tj ET
+BT /F1 10 Tf 484.33 672 Td (La Paz, Iloilo City, PH) Tj ET
+BT /F1 10 Tf 36 659.5 Td (GENERAL ACADEMIC STRAND \(GAS\)) Tj ET
+BT /F3 10 Tf 496.85 659.5 Td (Graduated July 2023) Tj ET
+BT /F2 11.5 Tf 36 640.5 Td (TECHNICAL PROJECTS & ARCHITECTURES) Tj ET
+0.75 w 0 0 0 RG 36 637.5 m 576 637.5 l S
+BT /F2 10.5 Tf 36 627 Td (PAWADOPT - STRAY RESCUE & ADOPTION PLATFORM) Tj ET
+BT /F1 10 Tf 469.92 627 Td (pawadopt-main.vercel.app) Tj ET
+BT /F3 10 Tf 36 614.5 Td (Sole Developer & Systems Architect) Tj ET
+BT /F3 10 Tf 489.2 614.5 Td (January 2026 - Present) Tj ET
+q 0 0 0 rg 39.7 605.5 m 39.7 606.22 40.28 606.8 41 606.8 c 41.72 606.8 42.3 606.22 42.3 605.5 c 41.72 604.78 41 604.2 40.28 604.2 c 39.7 604.78 39.7 605.5 c f Q
+BT /F1 10 Tf 50 602.5 Td (Independently architected, designed, and developed an end-to-end multi-portal web platform \(Citizen, Shelter Admin, and Local) Tj ET
+BT /F1 10 Tf 50 589.7 Td (Government Unit\) digitizing municipal stray reporting, rescue dispatch, and adoption workflows across Iloilo City.) Tj ET
+q 0 0 0 rg 39.7 578.4 m 39.7 579.12 40.28 579.7 41 579.7 c 41.72 579.7 42.3 579.12 42.3 578.4 c 41.72 577.68 41 577.1 40.28 577.1 c 39.7 577.68 39.7 578.4 c f Q
+BT /F1 10 Tf 50 575.4 Td (Leveraged modern AI developer tooling \(Cursor\) to rapidly scaffold frontend components and prototype UI views, maintaining) Tj ET
+BT /F1 10 Tf 50 562.6 Td (full ownership over system architecture, database design, and user experience.) Tj ET
+q 0 0 0 rg 39.7 551.3 m 39.7 552.02 40.28 552.6 41 552.6 c 41.72 552.6 42.3 552.02 42.3 551.3 c 41.72 550.58 41 550 40.28 550 c 39.7 550.58 39.7 551.3 c f Q
+BT /F1 10 Tf 50 548.3 Td (Integrated an interactive mapping interface with Mapbox GL JS, allowing citizens to drop precise GPS location pins for rescue) Tj ET
+BT /F1 10 Tf 50 535.5 Td (sightings, validated against municipal boundaries.) Tj ET
+q 0 0 0 rg 39.7 524.2 m 39.7 524.92 40.28 525.5 41 525.5 c 41.72 525.5 42.3 524.92 42.3 524.2 c 41.72 523.48 41 522.9 40.28 522.9 c 39.7 523.48 39.7 524.2 c f Q
+BT /F1 10 Tf 50 521.2 Td (Implemented real-time operational rescue boards utilizing Supabase Realtime WebSocket channels, automatically reflecting report) Tj ET
+BT /F1 10 Tf 50 508.4 Td (status changes without requiring page reloads.) Tj ET
+BT /F2 10.5 Tf 36 491.1 Td (BSIT STUDENT ATTENDANCE SYSTEM) Tj ET
+BT /F1 10 Tf 498.51 491.1 Td (PERN Stack - WIT) Tj ET
+BT /F3 10 Tf 36 478.6 Td (Front-End Developer) Tj ET
+BT /F3 10 Tf 557 478.6 Td (2026) Tj ET
+q 0 0 0 rg 39.7 469.6 m 39.7 470.32 40.28 470.9 41 470.9 c 41.72 470.9 42.3 470.32 42.3 469.6 c 41.72 468.88 41 468.3 40.28 468.3 c 39.7 468.88 39.7 469.6 c f Q
+BT /F1 10 Tf 50 466.6 Td (Engineered responsive React client interfaces for a PERN stack attendance verification and logging web application.) Tj ET
+q 0 0 0 rg 39.7 455.3 m 39.7 456.02 40.28 456.6 41 456.6 c 41.72 456.6 42.3 456.02 42.3 455.3 c 41.72 454.58 41 454 40.28 454 c 39.7 454.58 39.7 455.3 c f Q
+BT /F1 10 Tf 50 452.3 Td (Built high-speed student ID input verification and real-time confirmation UI, actively utilized by 300-500 BSIT students during) Tj ET
+BT /F1 10 Tf 50 439.5 Td (assemblies and academic events.) Tj ET
+q 0 0 0 rg 39.7 428.2 m 39.7 428.92 40.28 429.5 41 429.5 c 41.72 429.5 42.3 428.92 42.3 428.2 c 41.72 427.48 41 426.9 40.28 426.9 c 39.7 427.48 39.7 428.2 c f Q
+BT /F1 10 Tf 50 425.2 Td (Implemented export functionality enabling users to download complete morning and afternoon attendance session records.) Tj ET
+q 0 0 0 rg 39.7 413.9 m 39.7 414.62 40.28 415.2 41 415.2 c 41.72 415.2 42.3 414.62 42.3 413.9 c 41.72 413.18 41 412.6 40.28 412.6 c 39.7 413.18 39.7 413.9 c f Q
+BT /F1 10 Tf 50 410.9 Td (Implemented client-side validation logic and real-time state handling to eliminate manual paper rosters.) Tj ET
+BT /F2 10.5 Tf 36 393.6 Td (OFFICIAL WEBSITE OF BSIT WIT) Tj ET
+BT /F1 10 Tf 466.58 393.6 Td (witpsits-webapp.vercel.app) Tj ET
+BT /F3 10 Tf 36 381.1 Td (Front-End Developer) Tj ET
+BT /F3 10 Tf 473.1 381.1 Td (March 2026 - August 2026) Tj ET
+q 0 0 0 rg 39.7 372.1 m 39.7 372.82 40.28 373.4 41 373.4 c 41.72 373.4 42.3 372.82 42.3 372.1 c 41.72 371.38 41 370.8 40.28 370.8 c 39.7 371.38 39.7 372.1 c f Q
+BT /F1 10 Tf 50 369.1 Td (Co-developed and maintained the official web platform for the Western Institute of Technology BSIT program, serving as the) Tj ET
+BT /F1 10 Tf 50 356.3 Td (central digital hub for departmental resources, announcements, and events.) Tj ET
+q 0 0 0 rg 39.7 345 m 39.7 345.72 40.28 346.3 41 346.3 c 41.72 346.3 42.3 345.72 42.3 345 c 41.72 344.28 41 343.7 40.28 343.7 c 39.7 344.28 39.7 345 c f Q
+BT /F1 10 Tf 50 342 Td (Scaffolded application structure and backend integration using Express.js.) Tj ET
+q 0 0 0 rg 39.7 330.7 m 39.7 331.42 40.28 332 41 332 c 41.72 332 42.3 331.42 42.3 330.7 c 41.72 329.98 41 329.4 40.28 329.4 c 39.7 329.98 39.7 330.7 c f Q
+BT /F1 10 Tf 50 327.7 Td (Employed AI-assisted workflows to translate design requirements into responsive React and Tailwind CSS components, ensuring) Tj ET
+BT /F1 10 Tf 50 314.9 Td (clean mobile and desktop layouts.) Tj ET
+q 0 0 0 rg 39.7 303.6 m 39.7 304.32 40.28 304.9 41 304.9 c 41.72 304.9 42.3 304.32 42.3 303.6 c 41.72 302.88 41 302.3 40.28 302.3 c 39.7 302.88 39.7 303.6 c f Q
+BT /F1 10 Tf 50 300.6 Td (Collaborated within an agile student developer team using Git branch management, actively participating in bug fixes, component) Tj ET
+BT /F1 10 Tf 50 287.8 Td (refactoring, and UI performance maintenance.) Tj ET
+BT /F2 11.5 Tf 36 266.5 Td (LEADERSHIP & ACTIVITIES) Tj ET
+0.75 w 0 0 0 RG 36 263.5 m 576 263.5 l S
+BT /F2 10.5 Tf 36 253 Td (PSITS - WESTERN INSTITUTE OF TECHNOLOGY CHAPTER) Tj ET
+BT /F1 10 Tf 484.33 253 Td (La Paz, Iloilo City, PH) Tj ET
+BT /F3 10 Tf 36 240.5 Td (Core Developer) Tj ET
+BT /F3 10 Tf 473.1 240.5 Td (March 2026 - August 2026) Tj ET
+q 0 0 0 rg 39.7 231.5 m 39.7 232.22 40.28 232.8 41 232.8 c 41.72 232.8 42.3 232.22 42.3 231.5 c 41.72 230.78 41 230.2 40.28 230.2 c 39.7 230.78 39.7 231.5 c f Q
+BT /F1 10 Tf 50 228.5 Td (Scaffolded front-end component architecture and layout templates for departmental student platforms.) Tj ET
+q 0 0 0 rg 39.7 217.2 m 39.7 217.92 40.28 218.5 41 218.5 c 41.72 218.5 42.3 217.92 42.3 217.2 c 41.72 216.48 41 215.9 40.28 215.9 c 39.7 216.48 39.7 217.2 c f Q
+BT /F1 10 Tf 50 214.2 Td (Maintained student-facing web platforms, resolving UI rendering bottlenecks and improving responsive mobile layouts.) Tj ET
+q 0 0 0 rg 39.7 202.9 m 39.7 203.62 40.28 204.2 41 204.2 c 41.72 204.2 42.3 203.62 42.3 202.9 c 41.72 202.18 41 201.6 40.28 201.6 c 39.7 202.18 39.7 202.9 c f Q
+BT /F1 10 Tf 50 199.9 Td (Championed structured Git version control standards, branch conventions, and pull request workflows across student-led project) Tj ET
+BT /F1 10 Tf 50 187.1 Td (teams.) Tj ET
+q 0 0 0 rg 39.7 175.8 m 39.7 176.52 40.28 177.1 41 177.1 c 41.72 177.1 42.3 176.52 42.3 175.8 c 41.72 175.08 41 174.5 40.28 174.5 c 39.7 175.08 39.7 175.8 c f Q
+BT /F1 10 Tf 50 172.8 Td (Co-organized collaborative technical sessions and onboarding on front-end workflows, React component design, and reproducible) Tj ET
+BT /F1 10 Tf 50 160 Td (local setups.) Tj ET
+BT /F2 11.5 Tf 36 138.7 Td (TECHNICAL SKILLS) Tj ET
+0.75 w 0 0 0 RG 36 135.7 m 576 135.7 l S
+BT /F2 10 Tf 36 125.2 Td (Languages: ) Tj ET
+BT /F1 10 Tf 87.03 125.2 Td (JavaScript \(ES6+\), HTML5, CSS3, PHP, SQL) Tj ET
+BT /F2 10 Tf 36 112.4 Td (Frameworks & Libraries: ) Tj ET
+BT /F1 10 Tf 145.36 112.4 Td (React 18, Express.js, Tailwind CSS, Vite, PostCSS, Mapbox GL JS) Tj ET
+BT /F2 10 Tf 36 99.6000000000001 Td (Cloud & Backend BaaS: ) Tj ET
+BT /F1 10 Tf 142.17 99.6000000000001 Td (Node.js, Express.js, PostgreSQL, Supabase \(Realtime, Auth, Database\), MySQL, Vercel) Tj ET
+BT /F2 10 Tf 36 86.8000000000001 Td (Developer Tools: ) Tj ET
+BT /F1 10 Tf 111.82 86.8000000000001 Td (Git, GitHub, VS Code, Cursor, Postman, Chrome DevTools, npm/pnpm) Tj ET
+BT /F2 10 Tf 36 74.0000000000001 Td (Methodologies: ) Tj ET
+BT /F1 10 Tf 104.54 74.0000000000001 Td (Component-Driven Architecture, Single-Page Applications \(SPA\), Mobile-First Responsive Design, Agile) Tj ET
+BT /F1 10 Tf 104.54 61.2000000000001 Td (Collaboration) Tj ET
+
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000261 00000 n 
+0000000333 00000 n 
+0000000404 00000 n 
+0000000477 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+9485
+%%EOF

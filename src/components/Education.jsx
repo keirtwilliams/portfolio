@@ -24,13 +24,7 @@ const Education = () => {
         style={{ borderColor: 'var(--border-rule)' }}
         className="space-y-4 border-b pb-8"
       >
-        <div
-          style={{ color: 'var(--text-secondary)' }}
-          className="flex items-center justify-between text-xs font-mono uppercase tracking-widest"
-        >
-          <span>BACKGROUND</span>
-          <span>EDUCATION</span>
-        </div>
+      
 
         <h1
           id="education-title"

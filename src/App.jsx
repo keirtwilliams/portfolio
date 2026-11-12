@@ -15,7 +15,10 @@ function App() {
     return validPages.includes(hash) ? hash : 'overview';
   });
 
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const [docModal, setDocModal] = useState({ isOpen: false, type: 'resume' });
+  const handleOpenResume = () => setDocModal({ isOpen: true, type: 'resume' });
+  const handleOpenCv = () => setDocModal({ isOpen: true, type: 'cv' });
+  const handleCloseDocModal = () => setDocModal((prev) => ({ ...prev, isOpen: false }));
 
   const [theme, setTheme] = useState(() => {
     try {
@@ -96,7 +99,8 @@ function App() {
       <Sidebar
         currentPage={currentPage}
         onNavigate={handleNavigate}
-        onOpenResume={() => setIsResumeOpen(true)}
+        onOpenResume={handleOpenResume}
+        onOpenCv={handleOpenCv}
         theme={theme}
         onToggleTheme={toggleTheme}
       />
@@ -140,7 +144,8 @@ function App() {
           {currentPage === 'overview' && (
             <Overview
               onNavigate={handleNavigate}
-              onOpenResume={() => setIsResumeOpen(true)}
+              onOpenResume={handleOpenResume}
+              onOpenCv={handleOpenCv}
             />
           )}
           {currentPage === 'projects' && <Projects />}
@@ -156,16 +161,18 @@ function App() {
             borderColor: 'var(--border-rule)',
             color: 'var(--text-secondary)',
           }}
-          className="border-t px-6 sm:px-10 lg:px-16 py-6 text-xs font-mono uppercase tracking-wider"
+          className="border-t px-6 sm:px-10 lg:px-16 py-6 text-xs font-mono uppercase tracking-wider flex items-center justify-between"
         >
-          <span>Keirt William Gemperle &copy; {new Date().getFullYear()}</span>
+          <span>&copy; {new Date().getFullYear()} · All Rights Reserved</span>
+          <span>Portfolio</span>
         </footer>
       </main>
 
-      {/* Blur Backdrop Modal for Resume Preview */}
+      {/* Blur Backdrop Modal for Document Preview */}
       <ResumeModal
-        isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
+        isOpen={docModal.isOpen}
+        docType={docModal.type}
+        onClose={handleCloseDocModal}
       />
     </div>
   );

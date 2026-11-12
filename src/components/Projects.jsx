@@ -20,22 +20,42 @@ const projects = [
     stack: ['React', 'Supabase Realtime', 'Mapbox GL JS', 'Tailwind CSS', 'Vite'],
   },
   {
-    id: 'canopy',
-    title: 'Canopy',
-    subtitle: 'Official Departmental Web Platform',
+    id: 'attendance',
+    title: 'BSIT Attendance System',
+    subtitle: 'High-Throughput PERN Attendance Tracker',
+    role: 'Front-End Developer',
+    period: '2026',
+    image: '/projects/wit-attendance.png',
+    imageAlt: 'BSIT Student Attendance System interface featuring ID verification and live attendance logging for 300 to 500 students.',
+    liveUrl: 'https://witpsits-attendace-portal.vercel.app/',
+    description:
+      'Engineered the front-end interface for a PERN stack attendance logging system serving 300–500 BSIT students, providing rapid student ID input verification, real-time feedback, and exportable morning and afternoon attendance rosters.',
+    highlights: [
+      'Engineered responsive React client interfaces for instantaneous student ID input verification and real-time confirmation.',
+      'Deployed for active departmental use across assemblies and academic events, serving 300–500 BSIT students.',
+      'Implemented export functionality enabling users to download complete morning and afternoon attendance records.',
+      'Built client-side validation logic and real-time state updates to eliminate manual paper attendance rosters.',
+    ],
+    stack: ['React', 'PostgreSQL', 'Express.js', 'Node.js', 'Tailwind CSS'],
+  },
+  {
+    id: 'wit-bsit-website',
+    title: 'Official Website of BSIT WIT',
+    subtitle: 'Departmental & Student Organization Web Platform',
     role: 'Front-End Developer',
     period: 'Mar 2026 — Aug 2026',
     image: '/projects/canopy.png',
-    imageAlt: 'Canopy official web platform for the Western Institute of Technology BSIT department showing curriculum tracks and departmental dispatches.',
-    liveUrl: 'https://witpsits-webapp.vercel.app/?fbclid=IwY2xjawVeP1pleHRuA2FlbQIxMABwZG9mBWJyaWQRMUVaMUVYcWt5a05oQzlhb1BzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEfEMn4hC-FcRsLmg55HRBkSFNPEb681LwMFmeNxzRt1L2qi_h4Bep_BsBbUck_aem_tpDia5kiRo8UbsWzoCIaWw',
+    imageAlt: 'Official web platform for the Western Institute of Technology BSIT department showing curriculum tracks and departmental dispatches.',
+    liveUrl: 'https://witpsits-webapp.vercel.app',
     description:
-      'Co-developed the official web platform for the WIT BSIT department using React and Tailwind CSS.',
+      'Co-developed the official website for the WIT BSIT department and PSITS chapter using React, Express.js, and Tailwind CSS.',
     highlights: [
+      'Scaffolded application structure and backend integration using Express.js.',
       'Built accessible and reusable React UI modules adhering strictly to mobile-first responsive design.',
       'Structured institutional curriculum modules and faculty academic directory matrices.',
       'Collaborated within an agile student-faculty development squad with Git branch management.',
     ],
-    stack: ['React', 'Tailwind CSS', 'JavaScript (ES6+)', 'Vite'],
+    stack: ['React', 'Express.js', 'Tailwind CSS', 'JavaScript (ES6+)', 'Vite'],
   },
 ];
 
@@ -46,13 +66,7 @@ const Projects = () => {
         style={{ borderColor: 'var(--border-rule)' }}
         className="space-y-4 border-b pb-8"
       >
-        <div
-          style={{ color: 'var(--text-secondary)' }}
-          className="flex items-center justify-between text-xs font-mono uppercase tracking-widest"
-        >
-          <span>WORK</span>
-          <span>FEATURED PROJECTS</span>
-        </div>
+    
 
         <h1
           id="projects-title"
@@ -78,22 +92,59 @@ const Projects = () => {
               className="border p-4 sm:p-8 space-y-6 sm:space-y-8"
               aria-labelledby={`project-${project.id}-title`}
             >
-              {/* Visual Interface Mockup (Clickable) */}
-              <a
-                href={projectUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="group block interactive-media overflow-hidden cursor-pointer"
-                title={`Open ${project.title}`}
-                aria-label={`Open ${project.title}`}
-              >
-                <img
-                  src={project.image}
-                  alt={project.imageAlt}
-                  className="w-full h-auto object-cover block transition-transform duration-200 group-hover:scale-[1.01]"
-                  loading={idx === 0 ? 'eager' : 'lazy'}
-                />
-              </a>
+              {/* Visual Interface Mockup */}
+              {project.image ? (
+                <a
+                  href={projectUrl || '#'}
+                  target={projectUrl ? '_blank' : '_self'}
+                  rel="noreferrer"
+                  className="group block interactive-media overflow-hidden cursor-pointer"
+                  title={`Open ${project.title}`}
+                  aria-label={`Open ${project.title}`}
+                >
+                  <img
+                    src={project.image}
+                    alt={project.imageAlt}
+                    className="w-full h-auto object-cover block transition-transform duration-200 group-hover:scale-[1.01]"
+                    loading={idx === 0 ? 'eager' : 'lazy'}
+                  />
+                </a>
+              ) : (
+                <div
+                  style={{
+                    backgroundColor: 'var(--bg-surface)',
+                    borderColor: 'var(--border-rule)',
+                  }}
+                  className="border p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-xs uppercase tracking-wider"
+                >
+                  <div className="space-y-1">
+                    <span
+                      style={{ color: 'var(--text-secondary)' }}
+                      className="text-[10px] block"
+                    >
+                      System Architecture
+                    </span>
+                    <p
+                      style={{ color: 'var(--text-primary)' }}
+                      className="font-bold text-sm sm:text-base tracking-tight"
+                    >
+                      PERN Stack · PostgreSQL · Express · React · Node
+                    </p>
+                    <p style={{ color: 'var(--text-secondary)' }} className="text-[11px] normal-case">
+                      Production logging service tested and utilized by 300–500 active BSIT students.
+                    </p>
+                  </div>
+                  <span
+                    style={{
+                      borderColor: 'var(--border-rule)',
+                      color: 'var(--text-primary)',
+                    }}
+                    className="border px-3 py-1.5 text-[11px] font-bold whitespace-nowrap"
+                  >
+                    300–500 Active Users
+                  </span>
+                </div>
+              )}
 
               {/* Project Details Header */}
               <div
@@ -137,7 +188,7 @@ const Projects = () => {
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
-                      target="_blank"
+                      target={project.liveUrl !== '#' ? '_blank' : '_self'}
                       rel="noreferrer"
                       className="btn-primary inline-flex items-center space-x-1.5 px-3.5 py-1.5 text-xs font-mono uppercase tracking-wider cursor-pointer"
                     >

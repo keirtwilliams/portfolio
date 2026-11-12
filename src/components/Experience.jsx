@@ -7,13 +7,14 @@ const experiences = [
     period: 'Mar 2026 — Aug 2026',
     location: 'Iloilo City, Philippines',
     description:
-      'Maintained student-facing web platforms and championed structured version control.',
+      'Maintained student-facing web platforms, scaffolding front-end client architecture and championing structured version control.',
     responsibilities: [
+      'Scaffolded front-end component architecture and responsive layout templates for departmental student platforms.',
       'Maintained student-facing web platforms, resolving layout defects and improving client rendering performance.',
       'Championed structured version control standards and Git branch conventions across student-led project teams.',
       'Organized collaborative technical sessions on front-end workflows, code reviews, and reproducible local setups.',
     ],
-    tags: ['Git Workflow', 'Team Collaboration', 'Web Infrastructure', 'Code Reviews'],
+    tags: ['Front-End Development', 'Git Workflow', 'Team Collaboration', 'Web Infrastructure', 'Code Reviews'],
   },
 ];
 
@@ -24,13 +25,7 @@ const Experience = () => {
         style={{ borderColor: 'var(--border-rule)' }}
         className="space-y-4 border-b pb-8"
       >
-        <div
-          style={{ color: 'var(--text-secondary)' }}
-          className="flex items-center justify-between text-xs font-mono uppercase tracking-widest"
-        >
-          <span>BACKGROUND</span>
-          <span>LEADERSHIP & EXPERIENCE</span>
-        </div>
+    
 
         <h1
           id="experience-title"

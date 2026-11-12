@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 const navItems = [
   {
     id: 'overview',
-    num: '01',
     label: 'Overview',
     icon: (
       <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="square" aria-hidden="true">
@@ -14,7 +13,6 @@ const navItems = [
   },
   {
     id: 'projects',
-    num: '02',
     label: 'Projects',
     icon: (
       <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="square" aria-hidden="true">
@@ -24,7 +22,6 @@ const navItems = [
   },
   {
     id: 'skills',
-    num: '03',
     label: 'Skills',
     icon: (
       <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="square" aria-hidden="true">
@@ -35,7 +32,6 @@ const navItems = [
   },
   {
     id: 'experience',
-    num: '04',
     label: 'Experience',
     icon: (
       <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="square" aria-hidden="true">
@@ -47,7 +43,6 @@ const navItems = [
   },
   {
     id: 'education',
-    num: '05',
     label: 'Education',
     icon: (
       <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="square" aria-hidden="true">
@@ -58,7 +53,6 @@ const navItems = [
   },
   {
     id: 'contact',
-    num: '06',
     label: 'Contact',
     icon: (
       <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="square" aria-hidden="true">
@@ -69,7 +63,7 @@ const navItems = [
   },
 ];
 
-const Sidebar = ({ currentPage, onNavigate, onOpenResume, theme, onToggleTheme }) => {
+const Sidebar = ({ currentPage, onNavigate, onOpenResume, onOpenCv, theme, onToggleTheme }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleMobileNav = (id) => {
@@ -89,7 +83,7 @@ const Sidebar = ({ currentPage, onNavigate, onOpenResume, theme, onToggleTheme }
         className="hidden md:flex fixed top-0 left-0 bottom-0 w-72 lg:w-80 border-r flex-col justify-start p-7 lg:p-8 z-40 transition-colors duration-150 overflow-y-auto"
         aria-label="Primary Navigation Sidebar"
       >
-        {/* Brand / Name Block */}
+        {/* Brand Block */}
         <div className="space-y-3 pb-6 border-b" style={{ borderColor: 'var(--border-rule)' }}>
           <button
             type="button"
@@ -100,13 +94,13 @@ const Sidebar = ({ currentPage, onNavigate, onOpenResume, theme, onToggleTheme }
               style={{ color: 'var(--text-primary)' }}
               className="text-base font-bold tracking-tight uppercase transition-colors"
             >
-              Keirt William Gemperle
+              Front-End Developer
             </h1>
             <p
               style={{ color: 'var(--text-secondary)' }}
               className="text-xs font-mono mt-1"
             >
-              Front-End Developer
+              Engineering Portfolio
             </p>
           </button>
 
@@ -118,13 +112,13 @@ const Sidebar = ({ currentPage, onNavigate, onOpenResume, theme, onToggleTheme }
           </p>
         </div>
 
-        {/* Unified Navigation Index (Balanced rhythm with index numbering) */}
+        {/* Portfolio Directory */}
         <nav aria-label="Main Pages" className="pt-6 pb-6 space-y-1.5 flex-1">
           <span
             style={{ color: 'var(--text-muted)' }}
             className="text-[10px] font-mono uppercase tracking-widest font-semibold px-3 pb-2 block"
           >
-            Navigation Index
+            Directory
           </span>
 
           <ul className="space-y-1.5">
@@ -144,9 +138,11 @@ const Sidebar = ({ currentPage, onNavigate, onOpenResume, theme, onToggleTheme }
                       <span className="flex-shrink-0">{item.icon}</span>
                       <span>{item.label}</span>
                     </div>
-                    <span className="text-[10px] font-mono opacity-60">
-                      {item.num}
-                    </span>
+                    {isActive && (
+                      <span className="text-xs font-mono font-bold leading-none">
+                        &rarr;
+                      </span>
+                    )}
                   </button>
                 </li>
               );
@@ -154,17 +150,24 @@ const Sidebar = ({ currentPage, onNavigate, onOpenResume, theme, onToggleTheme }
           </ul>
         </nav>
 
-        {/* Bottom Section: Resume, Gmail & Copyright */}
+        {/* Bottom Section: Resume (Top) & CV (Below) */}
         <div
           style={{ borderColor: 'var(--border-rule)' }}
           className="mt-auto border-t pt-5 space-y-3"
         >
-          {/* Resume Document Card */}
+          <span
+            style={{ color: 'var(--text-muted)' }}
+            className="text-[10px] font-mono uppercase tracking-widest font-semibold px-1 block"
+          >
+            Documents
+          </span>
+
+          {/* 1. Resume Document Card (Top) */}
           <button
             type="button"
             onClick={onOpenResume}
             className="group block w-full text-left interactive-card p-3 cursor-pointer shadow-none transition-colors"
-            title="Open Resume Preview Modal"
+            title="Open Resume (PDF · 1 Page)"
             aria-label="Open resume preview modal"
           >
             <div className="flex items-center justify-between">
@@ -183,11 +186,67 @@ const Sidebar = ({ currentPage, onNavigate, onOpenResume, theme, onToggleTheme }
                   <polyline points="14 2 14 8 20 8" />
                   <line x1="16" y1="13" x2="8" y2="13" />
                   <line x1="16" y1="17" x2="8" y2="17" />
-                  <polyline points="10 9 9 9 8 9" />
                 </svg>
                 <span
                   style={{ color: 'var(--text-secondary)' }}
-                  className="text-[10px] font-mono uppercase tracking-wider transition-colors"
+                  className="text-[10px] font-mono uppercase tracking-wider transition-colors font-semibold"
+                >
+                  Resume
+                </span>
+              </div>
+              <span
+                style={{
+                  backgroundColor: 'var(--bg-canvas)',
+                  borderColor: 'var(--border-rule)',
+                  color: 'var(--text-primary)',
+                }}
+                className="border px-1.5 py-0.5 text-[9px] font-mono uppercase font-bold tracking-tight"
+              >
+                1 Page
+              </span>
+            </div>
+            <div className="mt-1.5 flex items-center justify-between">
+              <p
+                style={{ color: 'var(--text-primary)' }}
+                className="text-[11px] font-mono uppercase font-semibold tracking-tight"
+              >
+                View Resume
+              </p>
+              <span
+                style={{ color: 'var(--text-secondary)' }}
+                className="text-xs font-mono transition-transform duration-150 group-hover:translate-x-1"
+              >
+                &rarr;
+              </span>
+            </div>
+          </button>
+
+          {/* 2. Curriculum Vitae (CV) Card (Below Resume) */}
+          <button
+            type="button"
+            onClick={onOpenCv}
+            className="group block w-full text-left interactive-card p-3 cursor-pointer shadow-none transition-colors"
+            title="Open Curriculum Vitae (CV · PDF)"
+            aria-label="Open curriculum vitae preview modal"
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <svg
+                  style={{ color: 'var(--text-primary)' }}
+                  className="w-4 h-4 flex-shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                  strokeLinecap="square"
+                  aria-hidden="true"
+                >
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                </svg>
+                <span
+                  style={{ color: 'var(--text-secondary)' }}
+                  className="text-[10px] font-mono uppercase tracking-wider transition-colors font-semibold"
                 >
                   Curriculum Vitae
                 </span>
@@ -200,7 +259,7 @@ const Sidebar = ({ currentPage, onNavigate, onOpenResume, theme, onToggleTheme }
                 }}
                 className="border px-1.5 py-0.5 text-[9px] font-mono uppercase font-bold tracking-tight"
               >
-                PDF
+                CV · PDF
               </span>
             </div>
             <div className="mt-1.5 flex items-center justify-between">
@@ -208,7 +267,7 @@ const Sidebar = ({ currentPage, onNavigate, onOpenResume, theme, onToggleTheme }
                 style={{ color: 'var(--text-primary)' }}
                 className="text-[11px] font-mono uppercase font-semibold tracking-tight"
               >
-                Preview Document
+                View CV
               </p>
               <span
                 style={{ color: 'var(--text-secondary)' }}
@@ -219,48 +278,11 @@ const Sidebar = ({ currentPage, onNavigate, onOpenResume, theme, onToggleTheme }
             </div>
           </button>
 
-          {/* Gmail Account Block */}
-          <a
-            href="mailto:keirtwilliamgemperle@gmail.com"
-            className="group block interactive-card p-3"
-            title="Email Keirt William Gemperle"
-            aria-label="Send email to keirtwilliamgemperle@gmail.com"
-          >
-            <div className="flex items-center space-x-2">
-              <svg
-                style={{ color: 'var(--text-primary)' }}
-                className="w-4 h-4 flex-shrink-0"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.75"
-                strokeLinecap="square"
-                strokeLinejoin="miter"
-                aria-hidden="true"
-              >
-                <rect x="2" y="4" width="20" height="16" />
-                <polyline points="2,6 12,13 22,6" />
-              </svg>
-              <span
-                style={{ color: 'var(--text-secondary)' }}
-                className="text-[10px] font-mono uppercase tracking-wider transition-colors"
-              >
-                Gmail Account
-              </span>
-            </div>
-            <p
-              style={{ color: 'var(--text-primary)' }}
-              className="mt-1 text-[11px] font-mono truncate lowercase"
-            >
-              keirtwilliamgemperle@gmail.com
-            </p>
-          </a>
-
           <div
             style={{ color: 'var(--text-muted)' }}
             className="text-[10px] font-mono uppercase tracking-wider pt-2"
           >
-            <span>&copy; {new Date().getFullYear()} Keirt William Gemperle</span>
+            <span>&copy; {new Date().getFullYear()} · All Rights Reserved</span>
           </div>
         </div>
       </aside>
@@ -282,7 +304,7 @@ const Sidebar = ({ currentPage, onNavigate, onOpenResume, theme, onToggleTheme }
             style={{ color: 'var(--text-primary)' }}
             className="text-left text-xs font-bold uppercase tracking-tight truncate cursor-pointer"
           >
-            Keirt William Gemperle
+            Front-End Developer
           </button>
 
           <div className="flex items-center space-x-2 flex-shrink-0">
@@ -343,7 +365,7 @@ const Sidebar = ({ currentPage, onNavigate, onOpenResume, theme, onToggleTheme }
                 style={{ color: 'var(--text-muted)' }}
                 className="text-[10px] font-mono uppercase tracking-widest font-semibold block px-1"
               >
-                Navigation
+                Directory
               </span>
               <ul className="space-y-2 pt-2">
                 {navItems.map((item) => {
@@ -361,9 +383,11 @@ const Sidebar = ({ currentPage, onNavigate, onOpenResume, theme, onToggleTheme }
                           <span>{item.icon}</span>
                           <span>{item.label}</span>
                         </div>
-                        <span className="text-xs font-mono opacity-60">
-                          {item.num}
-                        </span>
+                        {isActive && (
+                          <span className="text-xs font-mono font-bold">
+                            &rarr;
+                          </span>
+                        )}
                       </button>
                     </li>
                   );
@@ -371,11 +395,18 @@ const Sidebar = ({ currentPage, onNavigate, onOpenResume, theme, onToggleTheme }
               </ul>
             </div>
 
-            {/* Quick Actions in Mobile Drawer */}
+            {/* Quick Document Actions in Mobile Drawer: Resume (Top) & CV (Below) */}
             <div
               style={{ borderColor: 'var(--border-rule)' }}
-              className="pt-5 border-t space-y-3"
+              className="pt-5 border-t space-y-2.5"
             >
+              <span
+                style={{ color: 'var(--text-muted)' }}
+                className="text-[10px] font-mono uppercase tracking-widest font-semibold block px-1"
+              >
+                Documents
+              </span>
+
               <button
                 type="button"
                 onClick={() => {
@@ -389,25 +420,28 @@ const Sidebar = ({ currentPage, onNavigate, onOpenResume, theme, onToggleTheme }
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                     <polyline points="14 2 14 8 20 8" />
                   </svg>
-                  <span>Curriculum Vitae</span>
+                  <span className="font-semibold">Resume</span>
                 </div>
-                <span className="font-semibold text-[10px]">PDF &rarr;</span>
+                <span className="font-semibold text-[10px]">1 Page &rarr;</span>
               </button>
 
-              <a
-                href="mailto:keirtwilliamgemperle@gmail.com"
-                className="block interactive-card p-3 text-xs font-mono"
+              <button
+                type="button"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  onOpenCv();
+                }}
+                className="w-full interactive-card p-3 text-xs font-mono uppercase tracking-wider flex items-center justify-between cursor-pointer"
               >
-                <div className="flex items-center justify-between">
-                  <span style={{ color: 'var(--text-secondary)' }} className="text-[10px] uppercase tracking-wider">
-                    Gmail Account
-                  </span>
-                  <span style={{ color: 'var(--text-secondary)' }}>&rarr;</span>
+                <div className="flex items-center space-x-2">
+                  <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="square">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                  </svg>
+                  <span className="font-semibold">Curriculum Vitae</span>
                 </div>
-                <p style={{ color: 'var(--text-primary)' }} className="mt-1 font-semibold truncate lowercase text-[11px]">
-                  keirtwilliamgemperle@gmail.com
-                </p>
-              </a>
+                <span className="font-semibold text-[10px]">CV · PDF &rarr;</span>
+              </button>
             </div>
           </div>
         )}

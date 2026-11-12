@@ -1,9 +1,13 @@
 {
   "framework": "vite",
   "cleanUrls": true,
+  "rewrites": [
+    { "source": "/resume.pdf", "destination": "/Resume101.pdf" },
+    { "source": "/resume101.pdf", "destination": "/Resume101.pdf" }
+  ],
   "headers": [
     {
-      "source": "/resume.pdf",
+      "source": "/(Resume101|resume101|resume|cv).pdf",
       "headers": [
         {
           "key": "Content-Type",

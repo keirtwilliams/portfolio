@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const ResumeModal = ({ isOpen, onClose }) => {
+const ResumeModal = ({ isOpen, onClose, docType = 'resume' }) => {
   useEffect(() => {
     if (!isOpen) return;
 
@@ -20,6 +20,12 @@ const ResumeModal = ({ isOpen, onClose }) => {
   }, [isOpen, onClose]);
 
   if (!isOpen) return null;
+
+  const isCv = docType === 'cv';
+  const docTitle = isCv ? 'Curriculum Vitae' : 'Resume';
+  const docBadge = isCv ? 'PDF · Academic & Technical' : 'PDF · 1 Page';
+  const pdfSrc = isCv ? '/cv.pdf' : '/Resume101.pdf';
+  const downloadFilename = isCv ? 'Keirt_William_Gemperle_CV.pdf' : 'Keirt_William_Gemperle_Resume.pdf';
 
   return (
     <div
@@ -67,7 +73,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
               style={{ color: 'var(--text-primary)' }}
               className="text-xs font-mono uppercase tracking-wider font-semibold truncate"
             >
-              Keirt William Gemperle — Resume
+              {docTitle}
             </span>
             <span
               style={{
@@ -77,18 +83,18 @@ const ResumeModal = ({ isOpen, onClose }) => {
               }}
               className="hidden sm:inline-block border px-1.5 py-0.5 text-[9px] font-mono font-bold uppercase tracking-wider"
             >
-              PDF · 1 Page
+              {docBadge}
             </span>
           </div>
 
           <div className="flex items-center space-x-2 flex-shrink-0">
             {/* Direct Open in New Tab */}
             <a
-              href="/resume.pdf"
+              href={pdfSrc}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center space-x-1 sm:space-x-1.5 btn-secondary px-2 sm:px-2.5 py-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-wider cursor-pointer"
-              title="Open PDF in new tab"
+              title="Open document in new tab"
             >
               <span>New Tab</span>
               <span>&rarr;</span>
@@ -96,8 +102,8 @@ const ResumeModal = ({ isOpen, onClose }) => {
 
             {/* Direct Download */}
             <a
-              href="/resume.pdf"
-              download="Keirt_William_Gemperle_Resume.pdf"
+              href={pdfSrc}
+              download={downloadFilename}
               className="inline-flex items-center space-x-1 sm:space-x-1.5 btn-secondary px-2 sm:px-2.5 py-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-wider cursor-pointer"
               title="Download PDF"
             >
@@ -114,7 +120,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
               type="button"
               onClick={onClose}
               className="btn-primary px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-mono uppercase tracking-wider font-semibold cursor-pointer"
-              aria-label="Close resume preview modal"
+              aria-label="Close document modal"
             >
               Close [Esc] &times;
             </button>
@@ -126,11 +132,46 @@ const ResumeModal = ({ isOpen, onClose }) => {
           style={{ backgroundColor: 'var(--bg-canvas)' }}
           className="flex-1 w-full h-full overflow-hidden relative"
         >
-          <iframe
-            src="/resume.pdf#toolbar=0&navpanes=0&scrollbar=0&pagemode=none&view=FitH"
-            title="Keirt William Gemperle — Resume"
+          <object
+            data={`${pdfSrc}#toolbar=0&navpanes=0&scrollbar=0&pagemode=none&view=FitH`}
+            type="application/pdf"
             className="w-full h-full block border-0"
-          />
+          >
+            <iframe
+              src={`${pdfSrc}#toolbar=0&navpanes=0&scrollbar=0&pagemode=none&view=FitH`}
+              title={docTitle}
+              className="w-full h-full block border-0"
+            >
+              <div
+                style={{
+                  backgroundColor: 'var(--bg-canvas)',
+                  color: 'var(--text-primary)',
+                }}
+                className="flex flex-col items-center justify-center h-full p-8 text-center space-y-4"
+              >
+                <p className="text-sm font-mono text-[var(--text-secondary)]">
+                  Document preview could not be loaded inline in this browser window.
+                </p>
+                <div className="flex gap-3">
+                  <a
+                    href={pdfSrc}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-primary px-4 py-2 text-xs font-mono uppercase tracking-wider"
+                  >
+                    Open in New Tab &rarr;
+                  </a>
+                  <a
+                    href={pdfSrc}
+                    download={downloadFilename}
+                    className="btn-secondary px-4 py-2 text-xs font-mono uppercase tracking-wider"
+                  >
+                    Download PDF &darr;
+                  </a>
+                </div>
+              </div>
+            </iframe>
+          </object>
         </div>
       </div>
     </div>
