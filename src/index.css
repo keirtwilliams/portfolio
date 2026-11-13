@@ -40,6 +40,23 @@ body {
   box-shadow: none !important;
 }
 
+/* Avatar styling override allowing circular profile photos & status badges */
+.avatar-circle {
+  border-radius: 9999px !important;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.avatar-circle img {
+  border-radius: 9999px !important;
+  image-rendering: auto;
+  image-rendering: -webkit-optimize-contrast;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--text-primary);
